@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Collection | Stonehaus Premium Granite & Tiles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="gallery-page">
+
+  <!-- ============================================================
+       STICKY NAVBAR (same as index, beige by default on inner page)
+  ============================================================ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-scrolled navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="logo-icon"><img src="guru/logo.svg (2).png" class="imgg" alt=""></i></span>
+        <span class="logo-text">Shree Guru<span class="logo-accent">Krupa</span></span>
+      </a>
+      <button class="navbar-toggler custom-toggler gallery-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       GALLERY PAGE HERO HEADER
+  ============================================================ -->
+  <header class="gallery-page-hero">
+    <div class="gallery-hero-bg">
+      <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1920&q=80&auto=format&fit=crop" alt="Premium stone collection header" />
+      <div class="gallery-hero-overlay"></div>
+    </div>
+    <div class="gallery-hero-content container text-center">
+      <p class="hero-tag">Shree GuruKrupa Collection</p>
+      <h1 class="gallery-hero-title">Our Stone & Tile Collection</h1>
+      <div class="title-divider mx-auto" style="background:#C6A75E;"></div>
+      <p class="gallery-hero-sub">Granite, Marble, Tiles, Kota Stone & Kadapa Stone for Every Space</p>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       FILTER BUTTONS
+  ============================================================ -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-bar d-flex flex-wrap justify-content-center gap-2">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="granite">Granite</button>
+        <button class="filter-btn" data-filter="tiles">Tiles</button>
+        <button class="filter-btn" data-filter="stone">Stone</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FULL GALLERY GRID — 18 CARDS
+  ============================================================ -->
+  <section class="section-padding gallery-bg">
+    <div class="container">
+      <div class="row g-4" id="galleryGrid">
+        <!-- Cards injected dynamically by JS -->
+      </div><!-- /row -->
+
+      <!-- No Results Message (hidden by default) -->
+      <div id="noResults" class="no-results-msg text-center py-5" style="display:none;">
+        <i class="bi bi-search" style="font-size:2.5rem; color:var(--accent-gold); opacity:.5;"></i>
+        <p class="mt-3" style="color:var(--warm-grey);">No items found for this category.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VISIT SHOWROOM CTA STRIP
+  ============================================================ -->
+  <section class="cta-strip">
+    <div class="container text-center">
+      <p class="section-eyebrow light">Looking for Quality Materials?</p>
+      <h2 class="cta-strip-title">Visit Shree GuruKrupa Today</h2>
+      <p class="cta-strip-sub">Explore our collection of granite, tiles, marble, Kota stone, and Kadapa stone. Our team will help you choose the right materials for your project.</p>
+      <a href="index.html#contact" class="btn btn-gold mt-4">Contact Us</a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+   <footer class="site-footer">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-4 text-lg-start text-center">
+          <div class="footer-brand"><a class="navbar-brand" href="index.html">
+        <span class="logo-icon"><img src="guru/logo.svg (2).png" class="imgg" alt=""></i></span>
+        <span class="logo-text">Shree Guru<span class="logo-accent">Krupa</span></span>
+      </a></div>
+          <p class="footer-tagline mt-2">Premium Granite & Tiles Showroom</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 text-lg-end text-center">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/_shree_guru_krupa_" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.facebook.com/shreegurukrupa" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="mailto:shreegurukrupa0211@gmail.com?subject=Granite%20and%20Tiles%20Inquiry" 
+              onclick="if(!/Mobi|Android/i.test(navigator.userAgent)){ window.open('https://mail.google.com/mail/?view=cm&fs=1&to=shreegurukrupa0211@gmail.com&su=Granite%20and%20Tiles%20Inquiry', '_blank'); return false; }"
+              aria-label="Email">
+              <i class="bi bi-envelope-fill"></i>
+            </a>
+            <a href="https://wa.me/918431914812" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="footer-copy text-center">© 2026 Shree GuruKrupa. All Rights Reserved. Crafted with care.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/918431914812" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ─────────────────────────────────────────────────────────
+       NAVBAR
+    ───────────────────────────────────────────────────────── */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('navbar-scrolled', window.scrollY > 60));
+
+    window.addEventListener('scroll', () => {
+      const menu = document.getElementById('navMenu');
+      if (menu.classList.contains('show')) new bootstrap.Collapse(menu).hide();
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('navMenu');
+        if (menu.classList.contains('show')) new bootstrap.Collapse(menu).hide();
+      });
+    });
+
+    /* ─────────────────────────────────────────────────────────
+       FADE-IN
+    ───────────────────────────────────────────────────────── */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in-section').forEach(el => obs.observe(el));
+
+    /* ─────────────────────────────────────────────────────────
+       GALLERY — fully dynamic
+       1. Try API → if success, save to localStorage cache + render
+       2. If API fails → load from localStorage cache
+       3. Filter buttons always work
+    ───────────────────────────────────────────────────────── */
+    const CACHE_KEY = 'gurukrupa_gallery_cache';
+    let allStones = [];
+
+    async function loadGalleryFromAPI() {
+      try {
+        const res = await fetch('/api/gallery', { signal: AbortSignal.timeout(5000) });
+        if (!res.ok) throw new Error('API not available');
+        const data = await res.json();
+
+        if (data.success && Array.isArray(data.data)) {
+          allStones = data.data;
+          // Save fresh data to localStorage cache
+          try { localStorage.setItem(CACHE_KEY, JSON.stringify(allStones)); } catch(e) {}
+          renderCards(allStones);
+        } else {
+          throw new Error('Empty or invalid response');
+        }
+      } catch (e) {
+        // API failed — try localStorage cache
+        try {
+          const cached = localStorage.getItem(CACHE_KEY);
+          if (cached) {
+            allStones = JSON.parse(cached);
+            renderCards(allStones);
+          } else {
+            // No cache either — show friendly message
+            document.getElementById('galleryGrid').innerHTML =
+              `<div class="col-12 text-center py-5" style="color:var(--warm-grey);">
+                <i class="bi bi-wifi-off" style="font-size:2.5rem; opacity:0.4; display:block; margin-bottom:12px;"></i>
+                <p>Gallery temporarily unavailable. Please check back shortly.</p>
+              </div>`;
+          }
+        } catch(e) {}
+      }
+    }
+
+    /* Build cards */
+    function renderCards(stones) {
+      const grid      = document.getElementById('galleryGrid');
+      const noResults = document.getElementById('noResults');
+
+      if (!stones.length) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+
+      noResults.style.display = 'none';
+      grid.innerHTML = stones.map(stone => `
+        <div class="col-lg-4 col-md-6 gallery-item" data-category="${stone.category}">
+          <div class="gallery-card">
+            <div class="gallery-img-wrap">
+              <img src="${stone.imageUrl}"
+                   alt="${stone.name}"
+                   class="gallery-img"
+                   loading="lazy"
+                   onerror="this.src='guru/gra.webp'" />
+              <span class="gallery-badge ${stone.category === 'stone' ? 'marble' : stone.category}">
+                ${capitalise(stone.category)}
+              </span>
+            </div>
+            <div class="gallery-info">
+              <h5 class="gallery-title">${stone.name}</h5>
+              ${stone.description ? `<p class="gallery-origin">${stone.description}</p>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      initFilter();
+    }
+
+    function capitalise(str) {
+      return str ? str.charAt(0).toUpperCase() + str.slice(1) : '';
+    }
+
+    /* Filter buttons */
+    function initFilter() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const noResults  = document.getElementById('noResults');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const filter   = btn.dataset.filter;
+          const filtered = filter === 'all'
+            ? allStones
+            : allStones.filter(s => s.category === filter);
+
+          renderCards(filtered);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadGalleryFromAPI);
+  </script>
+</body>
+</html>
