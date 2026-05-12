@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Shree GuruKrupa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Admin Login Page — scoped styles */
+    body { background: #3E2C23; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+
+    .login-wrap {
+      background: #F5F0E6;
+      border-radius: 12px;
+      padding: 50px 44px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .login-logo img { width: 60px; margin: 0 auto 12px; }
+    .login-logo .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3E2C23;
+    }
+    .login-logo .brand span { color: #C6A75E; }
+    .login-logo .sub {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #C6A75E;
+      margin-top: 4px;
+    }
+
+    .login-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #3E2C23;
+      margin-bottom: 6px;
+    }
+    .login-sub { font-size: 0.82rem; color: #6E6259; margin-bottom: 28px; }
+
+    .admin-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3E2C23;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .admin-input {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid rgba(62,44,35,0.18);
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      color: #3E2C23;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.3s;
+      margin-bottom: 18px;
+    }
+    .admin-input:focus { border-color: #C6A75E; box-shadow: 0 0 0 3px rgba(198,167,94,0.18); }
+    .admin-input::placeholder { color: rgba(110,98,89,0.5); }
+
+    .input-group-pass { position: relative; }
+    .input-group-pass .admin-input { padding-right: 44px; margin-bottom: 18px; }
+    .toggle-pass {
+      position: absolute; right: 14px; top: 50%; transform: translateY(-65%);
+      background: none; border: none; cursor: pointer;
+      color: #6E6259; font-size: 1rem; padding: 0;
+    }
+
+    .btn-login {
+      width: 100%;
+      background: #C6A75E;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-login:hover { background: #a88a42; transform: translateY(-1px); }
+    .btn-login:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+    .error-msg {
+      background: #fde8e8;
+      border: 1px solid #f5a5a5;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      color: #c0392b;
+      margin-bottom: 18px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+    .error-msg.show { display: flex; }
+
+    .back-link {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: #6E6259;
+    }
+    .back-link a { color: #C6A75E; font-weight: 600; }
+    .back-link a:hover { color: #a88a42; }
+  </style>
+</head>
+<body>
+
+  <div class="login-wrap">
+
+    <!-- Logo -->
+    <div class="login-logo">
+      <img src="../guru/logo.svg (2).png" alt="GuruKrupa Logo" />
+      <div class="brand">Shree Guru<span>Krupa</span></div>
+      <div class="sub">Admin Panel</div>
+    </div>
+
+    <h2 class="login-title">Welcome Back</h2>
+    <p class="login-sub">Sign in to manage your gallery.</p>
+
+    <!-- Error Message -->
+    <div class="error-msg" id="errorMsg">
+      <i class="bi bi-exclamation-circle-fill"></i>
+      <span id="errorText">Invalid username or password.</span>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm" novalidate>
+      <label class="admin-label" for="username">Username</label>
+      <input class="admin-input" type="text" id="username" placeholder="Enter your username" autocomplete="username" required />
+
+      <label class="admin-label" for="password">Password</label>
+      <div class="input-group-pass">
+        <input class="admin-input" type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required />
+        <button type="button" class="toggle-pass" onclick="togglePassword()" id="toggleBtn" aria-label="Show/hide password">
+          <i class="bi bi-eye" id="eyeIcon"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="btn-login" id="loginBtn">
+        <i class="bi bi-box-arrow-in-right"></i>
+        Sign In
+      </button>
+    </form>
+
+    <div class="back-link">
+      <a href="../index.html"><i class="bi bi-arrow-left me-1"></i>Back to Website</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Redirect to dashboard if already logged in
+    const existing = localStorage.getItem('adminToken');
+    if (existing) {
+      verifyAndRedirect(existing);
+    }
+
+    async function verifyAndRedirect(token) {
+      try {
+        const res = await fetch('/api/auth/verify', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        if (res.ok) window.location.href = '/admin/dashboard.html';
+      } catch (e) {
+        localStorage.removeItem('adminToken');
+      }
+    }
+
+    // Toggle password visibility
+    function togglePassword() {
+      const input = document.getElementById('password');
+      const icon  = document.getElementById('eyeIcon');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bi bi-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'bi bi-eye';
+      }
+    }
+
+    // Login form submission
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const btn      = document.getElementById('loginBtn');
+      const errDiv   = document.getElementById('errorMsg');
+      const errText  = document.getElementById('errorText');
+
+      if (!username || !password) {
+        errText.textContent = 'Please enter both username and password.';
+        errDiv.classList.add('show');
+        return;
+      }
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Signing in...';
+      errDiv.classList.remove('show');
+
+      try {
+        const res  = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          localStorage.setItem('adminToken', data.token);
+          window.location.href = '/admin/dashboard.html';
+        } else {
+          errText.textContent = data.message || 'Invalid credentials.';
+          errDiv.classList.add('show');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="bi bi-box-arrow-in-right"></i> Sign In';
+        }
+      } catch (err) {
+        errText.textContent = 'Could not connect to server. Is it running?';
+        errDiv.classList.add('show');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-box-arrow-in-right"></i> Sign In';
+      }
+    });
+  </script>
+
+</body>
+</html>
